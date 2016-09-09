@@ -1,0 +1,93 @@
+{
+  "name": "dice-prerender",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon src/server",
+    "start:prod": "cross-env NODE_ENV=production node src/server",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore",
+    "lint:js": "npm run lint:eslint -- . "
+  },
+  "lint-staged": {
+    "*.js": "lint:eslint",
+    "*.css": "stylelint"
+  },
+  "pre-commit": "lint:staged",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prerender": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "6.1.2",
+    "cross-env": "2.0.0",
+    "eslint": "3.3.1",
+    "eslint-config-airbnb": "10.0.1",
+    "eslint-import-resolver-webpack": "0.5.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "2.1.0",
+    "eslint-plugin-react": "6.0.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": false,
+      "node": true,
+      "mocha": true,
+      "es6": true
+    },
+    "plugins": [
+      "react",
+      "jsx-a11y"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "arrow-body-style": [
+        2,
+        "as-needed"
+      ],
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ],
+      "import/imports-first": 0,
+      "import/newline-after-import": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-named-as-default": 0,
+      "import/no-unresolved": 2,
+      "import/prefer-default-export": 0,
+      "indent": [
+        2,
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "jsx-a11y/aria-props": 2,
+      "jsx-a11y/heading-has-content": 0,
+      "jsx-a11y/href-no-hash": 2,
+      "jsx-a11y/label-has-for": 2,
+      "jsx-a11y/mouse-events-have-key-events": 2,
+      "jsx-a11y/role-has-required-aria-props": 2,
+      "jsx-a11y/role-supports-aria-props": 2,
+      "max-len": 0,
+      "newline-per-chained-call": 0,
+      "no-console": 1,
+      "no-use-before-define": 0,
+      "prefer-template": 2,
+      "react/jsx-filename-extension": 0,
+      "react/jsx-no-target-blank": 0,
+      "react/require-extension": 0,
+      "react/self-closing-comp": 0,
+      "require-yield": 0
+    }
+  }
+}
